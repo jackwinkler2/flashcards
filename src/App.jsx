@@ -3,9 +3,17 @@ import cards from './data/cards'
 import Cards from './components/Cards';
 import './App.css'
 
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 100) + 150;
+    const g = Math.floor(Math.random() * 100) + 150;
+    const b = Math.floor(Math.random() * 100) + 150;
+    return `rgba(${r}, ${g}, ${b}, 0.5)`;
+}
+
 function App() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [cardColor, setCardColor] = useState(getRandomColor());
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -21,6 +29,7 @@ function App() {
 
     setCurrentCardIndex(index);
     setIsFlipped(false);
+    setCardColor(getRandomColor());
   };
   
   return (
@@ -36,6 +45,7 @@ function App() {
           answer={cards[currentCardIndex].answer}
           isFlipped={isFlipped}
           onClick={handleFlip}
+          backgroundColor={cardColor}
         />
 
         <button onClick={handleNext}>-&gt;</button>
