@@ -35,7 +35,7 @@ Here's a walkthrough of implemented required features:
 <img src="src/assets/WEB_102_Proj2_Jack_Winkler.gif" alt="Video Walkthrough" width="500" />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ScreenToGif
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -44,6 +44,10 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+Overall, this project went smoother than the last one, as I had any easier time with initial setup
+of my environment and file structure, but I also had to work with useState functions which were
+challenging, as well as the flipping animation which was challenging to format.
 
 ## License
 
