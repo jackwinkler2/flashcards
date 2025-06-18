@@ -1,33 +1,46 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import cards from './data/cards'
+import Cards from './components/Cards';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
 
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleNext = () => {
+    let index = -1
+
+    // choose a random index that is not the current card
+    do {
+      index = Math.floor(Math.random() * cards.length);
+    }while (index == currentCardIndex && cards.length > 1);
+
+    setCurrentCardIndex(index);
+    setIsFlipped(false);
+  };
+  
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+        <h1>Become a Data Scientist</h1>
+        <h2>Want to become a data scientist? Let's see what you know!</h2>
+        <h3>Number of cards:</h3>
+
+        <Cards
+          question={cards[currentCardIndex].question}
+          answer={cards[currentCardIndex].answer}
+          isFlipped={isFlipped}
+          onClick={handleFlip}
+        />
+
+        <button onClick={handleNext}>-&gt;</button>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
