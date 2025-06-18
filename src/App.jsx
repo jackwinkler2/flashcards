@@ -7,7 +7,7 @@ function getRandomColor() {
     const r = Math.floor(Math.random() * 100) + 150;
     const g = Math.floor(Math.random() * 100) + 150;
     const b = Math.floor(Math.random() * 100) + 150;
-    return `rgba(${r}, ${g}, ${b}, 0.5)`;
+    return `rgba(${r}, ${g}, ${b}, 0.92)`;
 }
 
 function App() {
@@ -36,9 +36,9 @@ function App() {
     <>
       <div>
 
-        <h1>Become a Data Scientist</h1>
-        <h2>Want to become a data scientist? Let's see what you know!</h2>
-        <h3>Number of cards:</h3>
+        <h1>All About  Penguins</h1>
+        <h2>Think you know about penguins? Test your knowledge!</h2>
+        <h3>Number of cards: {cards.length}</h3>
 
         <Cards
           question={cards[currentCardIndex].question}
