@@ -1,15 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './InputBox.css'
 
-function InputBox({answer}) {
+function InputBox({answer, borderStatus, onGuess}) {
   const [inputValue, setInputValue] = useState('')
   const [isCorrect, setIsCorrect] = useState(null)
 
+  useEffect(() => {
+    setInputValue('');
+    setIsCorrect(null);
+  }, [borderStatus]);
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const trimmed = inputValue.trim().toLowerCase()
-    setIsCorrect(trimmed === answer.toLowerCase())
-  }
+    e.preventDefault();
+    const trimmed = inputValue.trim().toLowerCase();
+    const correct = trimmed === answer.toLowerCase();
+    setIsCorrect(correct);
+    if (onGuess) {
+      onGuess(correct);
+    }
+  };
 
   let inputBorderClass = 'border-gray-400'
   if (isCorrect === true) {

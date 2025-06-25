@@ -68,4 +68,20 @@ button {
 .guess-text{
   color: black;
   font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-button {
+  padding: 10px 22px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.disabled-button {
+  background-color: #ccc;
+  color: #666;
 }
