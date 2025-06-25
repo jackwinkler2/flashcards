@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import cards from './data/cards'
-import Cards from './components/Cards';
+import Cards from './components/Cards'
 import './App.css'
+import InputBox from './components/InputBox'
 
 function getRandomColor() {
     const r = Math.floor(Math.random() * 100) + 150;
@@ -47,7 +48,9 @@ function App() {
           onClick={handleFlip}
           backgroundColor={cardColor}
         />
-
+        <div>
+          <p className="guess-text">Guess the answer here: {<InputBox answer={cards[currentCardIndex].answer} />}</p>
+        </div>
         <button onClick={handleNext}>-&gt;</button>
 
       </div>

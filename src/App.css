@@ -64,3 +64,8 @@ button {
   background-color: black;
   color: white;
 }
+
+.guess-text{
+  color: black;
+  font-weight: bold;
+}

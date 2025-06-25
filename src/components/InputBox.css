@@ -1,0 +1,33 @@
+.submit-button {
+  background-color: white;
+  color: black;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 15px;
+}
+
+.input-box {
+  padding: 5px;
+  width: 175px;
+  outline: none;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.input-form {
+    display: inline-flex;
+}
+
+.border-gray-400 {
+  border-color: gray;
+}
+
+.border-green-500 {
+  border-color: green;
+}
+
+.border-red-500 {
+  border-color: red;
+}
